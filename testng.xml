@@ -30,7 +30,7 @@
             <class name="tests.SVGTest"/>
             <class name="tests.ScrollingDropdownTest"/>
 
-            <!-- Run Last -->
+            
             <class name="tests.PagesSectionTest"/>
 
         </classes>
