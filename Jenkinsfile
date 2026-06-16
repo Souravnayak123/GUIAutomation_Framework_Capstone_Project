@@ -34,29 +34,6 @@ pipeline {
                 bat 'mvn test'
             }
         }
-
-        stage('Check Report Time') {
-
-            steps {
-
-                bat 'dir reports'
-            }
-        }
-
-        stage('Publish Extent Report') {
-
-            steps {
-
-                publishHTML([
-                    allowMissing: true,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: false,
-                    reportDir: 'reports',
-                    reportFiles: 'ExtentReport.html',
-                    reportName: 'Extent Automation Report'
-                ])
-            }
-        }
     }
 
     post {
@@ -69,12 +46,6 @@ pipeline {
         failure {
 
             echo 'Build Failed'
-        }
-
-        always {
-
-            archiveArtifacts artifacts: 'reports/*.html',
-            allowEmptyArchive: true
         }
     }
 }
