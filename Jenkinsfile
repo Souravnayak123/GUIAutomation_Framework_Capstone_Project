@@ -42,7 +42,7 @@ pipeline {
                 publishHTML([
                     allowMissing: true,
                     alwaysLinkToLastBuild: true,
-                    keepAll: true,
+                    keepAll: false,
                     reportDir: 'reports',
                     reportFiles: 'ExtentReport.html',
                     reportName: 'Extent Automation Report'
