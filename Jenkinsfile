@@ -35,6 +35,14 @@ pipeline {
             }
         }
 
+        stage('Check Report Time') {
+
+            steps {
+
+                bat 'dir reports'
+            }
+        }
+
         stage('Publish Extent Report') {
 
             steps {
